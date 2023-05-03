@@ -40,9 +40,7 @@ def parse_args():
     parser.add_argument("-s", "--stake", help="Stake")
 
     # Read arguments from command line
-    args = parser.parse_args()
-
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
