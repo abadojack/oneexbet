@@ -7,6 +7,11 @@ def process_csv(stake_):
     print(f"If you put a stake of Kes {stake_} on all the bet slips posted by Gabriel_gunner2 on twitter in April, 2023:")
 
     data = pd.read_csv('Gabriel_gunner2.csv')
+
+    total_stake = len(data.index) * stake_
+
+    print("Total stake: ", total_stake)
+
     total_win = 0.0
     total_loss = 0.0
     win_count, loss_count = 0, 0
@@ -28,7 +33,7 @@ def process_csv(stake_):
     print("Loss: ", total_loss)
 
     # 20% tax on winnings
-    print("Profit: ", (total_win - total_loss) * .80)
+    print("Profit: ", ((total_win * .80) - total_loss) - total_stake)
     print("win/loss * 100: ", win_count/loss_count * 100)
 
 
